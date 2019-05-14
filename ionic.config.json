@@ -1,5 +1,7 @@
 {
   "name": "TemanIbu",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

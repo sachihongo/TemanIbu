@@ -9,3 +9,19 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+//ion-split-pane{
+//  background-color: #0cd1e8;
+//}
+
+//ion-app{
+//   background-color: #ffce00;
+//}
+
+.profile-image{
+  img{
+    border-radius: 50%;
+    margin:10px;
+    border:4px solid;
+  }
+}

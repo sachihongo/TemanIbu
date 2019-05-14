@@ -1,4 +1,63 @@
 .welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+  max-height: 30vh;
+  max-width: 38vh;
+}
+
+//ion-content{
+//  --background: url(../../assets/background/background2.png);
+//  --background-repeat: no-repeat;
+//  --background-size: cover;
+//  --overflow: hidden;
+//}
+
+//ion-scroll[scrollX] {
+//  white-space: nowrap;
+//  height: 120px;
+//  overflow: hidden;
+//
+//  .scroll-item {
+//    display: inline-block;
+//  }
+//
+//  .selectable-icon{
+//    margin: 10px 20px 10px 20px;
+//    color: red;
+//    font-size: 100px;
+//  }
+//
+//  ion-avatar img{
+//    margin: 10px;
+//  }
+//}
+
+
+div[scrollx=true] {
+  white-space: nowrap;
+  height: 250px;
+  overflow-x: auto;
+  position: relative;
+
+  .scroll-item {
+    display: inline-block;
+  }
+
+  .selectable-icon{
+    margin: 10px 20px 10px 20px;
+    color: red;
+    font-size: 100px;
+  }
+
+  ion-avatar img{
+    margin: 10px;
+  }
+
+}
+
+div [scroll-avatar]{
+  height: 60px;
+}
+
+/* Hide ion-content scrollbar */
+::-webkit-scrollbar{
+  display:none;
 }

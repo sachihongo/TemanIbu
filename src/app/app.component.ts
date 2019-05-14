@@ -1,3 +1,4 @@
+/* tslint:disable:no-string-literal */
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -12,13 +13,18 @@ export class AppComponent {
   public appPages = [
     {
       title: 'Home',
-      url: '/home',
+      url: '/tabs/home',
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Chat',
+      url: '/chat',
+      icon: 'chatboxes'
+    },
+    {
+      title: 'About',
+      url: '/chat',
+      icon: 'alert'
     }
   ];
 
@@ -35,5 +41,9 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  exit() {
+    navigator['app'].exitApp(); // untuk exit app di native
   }
 }
