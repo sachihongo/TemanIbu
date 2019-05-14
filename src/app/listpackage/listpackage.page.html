@@ -1,26 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>listpackage</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+      <ion-title>List Package</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="package-card" (click)="detailpackage()">
     <ion-img src="../assets/img/gold.jpg" height="100px"></ion-img>
-    <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
+      <ion-item>
+        <p>Paket Gold</p>
+        <ion-chip slot="end">
+          <ion-icon name="pricetags" color="dark"></ion-icon>
+          <ion-label>IDR 50 K</ion-label>
+        </ion-chip>
+      </ion-item>
   </ion-card>
   <ion-card>
     <ion-img src="../assets/img/platinum.jpg" height="100px"></ion-img>
-    <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
+    <ion-item>
+      <p>Paket Platinum</p>
+      <ion-chip slot="end">
+        <ion-icon name="pricetags" color="dark"></ion-icon>
+        <ion-label>IDR 150 K</ion-label>
+      </ion-chip>
+    </ion-item>
   </ion-card>
   <ion-card>
     <ion-img src="../assets/img/titanium.jpg" height="100px"></ion-img>
-    <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
+    <ion-item>
+      <p>Paket Titanium</p>
+      <ion-chip slot="end">
+        <ion-icon name="pricetags" color="dark"></ion-icon>
+        <ion-label>IDR 250 K</ion-label>
+      </ion-chip>
+    </ion-item>
   </ion-card>
 </ion-content>

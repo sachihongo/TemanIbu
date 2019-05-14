@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'listpackage', loadChildren: './listpackage/listpackage.module#ListpackagePageModule' },
   { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'detailpackage', loadChildren: './detailpackage/detailpackage.module#DetailpackagePageModule' },
+  { path: 'orderpackage', loadChildren: './orderpackage/orderpackage.module#OrderpackagePageModule' },
   // { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   // { path: 'explore', loadChildren: './explore/explore.module#ExplorePageModule' },
   // { path: 'order', loadChildren: './order/order.module#OrderPageModule' }

@@ -6,5 +6,10 @@ ion-content{
   --background: url(../../assets/background/background2.png);
   --background-repeat: no-repeat;
   --background-size: cover;
-  --overflow: hidden;
 }
+
+.package-card ion-img {
+  max-height: 20vh;
+}
+
+

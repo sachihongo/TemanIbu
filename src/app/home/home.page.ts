@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,4 +14,10 @@ export class HomePage {
     { title: 'Notatka 2', description: 'Opis notatki 2' },
     { title: 'Notatka 3', description: 'Opis notatki 3' }
   ];
+
+  constructor(private router: Router) { }
+
+  listpackage() {
+    this.router.navigateByUrl('/listpackage');
+  }
 }
