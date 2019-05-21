@@ -5,5 +5,36 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid fixed>
 
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Name" [(ngModel)]="peopleName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Baby Name" [(ngModel)]="babyName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+          <ion-item>
+              <ion-input placeholder="Enter Phone Number" [(ngModel)]="peoplePhone"></ion-input>
+          </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Enter Address" [(ngModel)]="peopleAddress"></ion-input>
+        </ion-item>
+      </ion-col>
+
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="CreateRecord()" [disabled]="!peopleName || !babyName || !peoplePhone || !peopleAddress ">
+          <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+          &nbsp;Pesan
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

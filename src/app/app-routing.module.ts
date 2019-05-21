@@ -11,9 +11,14 @@ const routes: Routes = [
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
   { path: 'detailpackage', loadChildren: './detailpackage/detailpackage.module#DetailpackagePageModule' },
   { path: 'orderpackage', loadChildren: './orderpackage/orderpackage.module#OrderpackagePageModule' },
+  // { path: 'myorder', loadChildren: './myorder/myorder.module#MyorderPageModule' },
   // { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   // { path: 'explore', loadChildren: './explore/explore.module#ExplorePageModule' },
-  // { path: 'order', loadChildren: './order/order.module#OrderPageModule' }
+  { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
+  { path: 'soonmom', loadChildren: './soonmom/soonmom.module#SoonmomPageModule' },
+  { path: 'soonkids', loadChildren: './soonkids/soonkids.module#SoonkidsPageModule' },
+  // { path: 'info', loadChildren: './info/info.module#InfoPageModule' },
+  // { path: 'promo', loadChildren: './promo/promo.module#PromoPageModule' }
 ];
 
 @NgModule({

@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
       { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
       { path: 'explore', loadChildren: '../explore/explore.module#ExplorePageModule' },
-      { path: 'order', loadChildren: '../order/order.module#OrderPageModule' }
+      { path: 'myorder', loadChildren: '../myorder/myorder.module#MyorderPageModule' }
     ]
   },
   {

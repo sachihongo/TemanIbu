@@ -17,11 +17,11 @@
       <ion-img src="/assets/img/baby2.png"></ion-img>
     </ion-card>
 
-    <ion-card class="welcome-card">
+    <ion-card class="welcome-card" (click)="soonmom()">
       <ion-img src="/assets/img/mom.png"></ion-img>
     </ion-card>
 
-    <ion-card class="welcome-card">
+    <ion-card class="welcome-card" (click)="soonkids()">
       <ion-img src="/assets/img/kids.png"></ion-img>
     </ion-card>
   </ion-slides>
@@ -30,9 +30,9 @@
   <ion-row>
     <ion-item lines="none">
       <ion-label position="fixed" text-right>Info & Promo</ion-label>
+      <!--<p text-right slot="end">Lihat Semua</p>-->
     </ion-item>
     <ion-item lines="none">
-
       <div scrollX="true">
         <!--<ion-icon *ngFor="let avatar of avatar" name="radio-button-on" class="scroll-item selectable-icon"></ion-icon>-->
         <ion-card class="welcome-card scroll-item" *ngFor="let avatar of avatar">
@@ -41,7 +41,6 @@
             <ion-card-subtitle color="dark">Donasi wujudkan mimpi</ion-card-subtitle>
             <ion-card-subtitle>Yuk, #PatunganUntukBerbagi</ion-card-subtitle>
           </ion-card-header>
-
         </ion-card>
       </div>
     </ion-item>

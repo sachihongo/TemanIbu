@@ -20,4 +20,12 @@ export class HomePage {
   listpackage() {
     this.router.navigateByUrl('/listpackage');
   }
+
+  soonmom() {
+    this.router.navigateByUrl('/soonmom');
+  }
+
+  soonkids() {
+    this.router.navigateByUrl('/soonkids');
+  }
 }

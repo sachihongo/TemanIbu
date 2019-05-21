@@ -23,7 +23,7 @@ export class AppComponent {
     },
     {
       title: 'About',
-      url: '/chat',
+      url: '/about',
       icon: 'alert'
     }
   ];

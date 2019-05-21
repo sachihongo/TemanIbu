@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      My Order
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of peoples">
+      <ion-card-header>
+        <ion-card-title>{{item.Name}}</ion-card-title>
+        <ion-card-subtitle>{{item.Address}}</ion-card-subtitle>
+      </ion-card-header>
+  </ion-card>
+
+</ion-content>

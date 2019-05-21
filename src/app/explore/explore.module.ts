@@ -6,6 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ExplorePage } from './explore.page';
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
+import {InfoPageModule} from '../info/info.module';
+import {PromoPageModule} from '../promo/promo.module';
 
 const routes: Routes = [
   {
@@ -19,8 +22,12 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SuperTabsModule,
+    InfoPageModule,
+    PromoPageModule
   ],
+  entryComponents: [ExplorePage],
   declarations: [ExplorePage]
 })
 export class ExplorePageModule {}
