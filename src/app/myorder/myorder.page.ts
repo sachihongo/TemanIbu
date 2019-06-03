@@ -13,19 +13,19 @@ export class MyorderPage implements OnInit {
   constructor(private crudService: CrudService) { }
 
   ngOnInit() {
-    this.crudService.read_Peoples().subscribe(data => {
-
-      this.peoples = data.map(e => {
-        return{
-          id: e.payload.doc.id,
-          Name: e.payload.doc.data()['Name'],
-          Baby: e.payload.doc.data()['Baby'],
-          Phone: e.payload.doc.data()['Phone'],
-          Address: e.payload.doc.data()['Address']
-        };
-      })
-      console.log(this.peoples);
-    });
+    // this.crudService.read_Peoples().subscribe(data => {
+    //
+    //   this.peoples = data.map(e => {
+    //     return{
+    //       id: e.payload.doc.id,
+    //       Name: e.payload.doc.data()['Name'],
+    //       Baby: e.payload.doc.data()['Baby'],
+    //       Phone: e.payload.doc.data()['Phone'],
+    //       Address: e.payload.doc.data()['Address']
+    //     };
+    //   })
+    //   console.log(this.peoples);
+    // });
   }
 
 }

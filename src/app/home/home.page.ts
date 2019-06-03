@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import {MenuController} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,11 @@ export class HomePage {
     { title: 'Notatka 3', description: 'Opis notatki 3' }
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private menuCtrl: MenuController) { }
+
+  ngOnInit() {
+    this.menuCtrl.enable(true);
+  }
 
   listpackage() {
     this.router.navigateByUrl('/listpackage');
@@ -28,4 +33,5 @@ export class HomePage {
   soonkids() {
     this.router.navigateByUrl('/soonkids');
   }
+
 }

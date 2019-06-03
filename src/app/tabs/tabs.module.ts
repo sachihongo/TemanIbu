@@ -9,7 +9,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs/home',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];
