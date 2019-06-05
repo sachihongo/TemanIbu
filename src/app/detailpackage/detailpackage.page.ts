@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 
 @Component({
   selector: 'app-detailpackage',
@@ -8,12 +8,27 @@ import {Router} from '@angular/router';
 })
 export class DetailpackagePage implements OnInit {
 
-  constructor(private router: Router) { }
+  data: any;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.data = this.router.getCurrentNavigation().extras.state.paket;
+        console.log('Data pada hal detail package:', this.data);
+      }
+    });
+  }
 
   ngOnInit() {
   }
 
-  orderdetail() {
-    this.router.navigateByUrl('/orderpackage');
+  orderdetail(datas) {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        order: datas
+      }
+    };
+    console.log('datas parsing: ', datas);
+    this.router.navigate(['orderpackage'], navigationExtras);
   }
 }

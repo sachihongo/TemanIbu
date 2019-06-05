@@ -4,7 +4,7 @@ import {first} from 'rxjs/operators';
 import { auth } from 'firebase/app';
 
 interface user {
-    username: string;
+    email: string;
     uid: string;
 }
 

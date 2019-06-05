@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CrudService } from './../service/crud.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-orderpackage',
@@ -16,28 +16,37 @@ export class OrderpackagePage implements OnInit {
   peoplePhone: number;
   peopleAddress: string;
 
-  constructor(private crudService: CrudService, private router: Router) { }
+  od: any;
+
+  constructor(private crudService: CrudService, private router: Router, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.od = this.router.getCurrentNavigation().extras.state.order;
+        console.log(this.od);
+      }
+    });
+  }
 
   ngOnInit() {
   }
 
-  CreateRecord() {
-    const record = {};
-    record['Name'] = this.peopleName;
-    record['Baby'] = this.babyName;
-    record['Phone'] = this.peoplePhone;
-    record['Address'] = this.peopleAddress;
-    this.crudService.create_NewPeople(record).then(resp => {
-      this.router.navigateByUrl('/tabs/myorder');
-      // this.peopleName = '';
-      // this.babyName = '';
-      // this.peoplePhone = undefined;
-      // this.peopleAddress = '';
-      // console.log(resp);
-    })
-        .catch(error => {
-          console.log(error);
-        });
-  }
+  // CreateRecord() {
+  //   const record = {};
+  //   record['Name'] = this.peopleName;
+  //   record['Baby'] = this.babyName;
+  //   record['Phone'] = this.peoplePhone;
+  //   record['Address'] = this.peopleAddress;
+  //   this.crudService.create_NewPeople(record).then(resp => {
+  //     this.router.navigateByUrl('/tabs/myorder');
+  //     // this.peopleName = '';
+  //     // this.babyName = '';
+  //     // this.peoplePhone = undefined;
+  //     // this.peopleAddress = '';
+  //     // console.log(resp);
+  //   })
+  //       .catch(error => {
+  //         console.log(error);
+  //       });
+  // }
 
 }

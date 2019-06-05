@@ -1,3 +1,4 @@
+<script src="../login/login.page.ts"></script>
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -8,34 +9,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="package-card" (click)="detailpackage()">
-    <ion-img src="../assets/img/gold.jpg" height="100px"></ion-img>
+  <ion-card class="package-card" *ngFor="let package of packages" (click)="detailpackage(package)">
+    <ion-img src="{{ package.img }}" height="100px"></ion-img>
       <ion-item>
-        <p>Paket Gold</p>
+        <p>Paket {{ package.name }}</p>
         <ion-chip slot="end">
           <ion-icon name="pricetags" color="dark"></ion-icon>
-          <ion-label>IDR 50 K</ion-label>
+          <ion-label>IDR {{ package.price }}</ion-label>
         </ion-chip>
       </ion-item>
-  </ion-card>
-  <ion-card>
-    <ion-img src="../assets/img/platinum.jpg" height="100px"></ion-img>
-    <ion-item>
-      <p>Paket Platinum</p>
-      <ion-chip slot="end">
-        <ion-icon name="pricetags" color="dark"></ion-icon>
-        <ion-label>IDR 150 K</ion-label>
-      </ion-chip>
-    </ion-item>
-  </ion-card>
-  <ion-card>
-    <ion-img src="../assets/img/titanium.jpg" height="100px"></ion-img>
-    <ion-item>
-      <p>Paket Titanium</p>
-      <ion-chip slot="end">
-        <ion-icon name="pricetags" color="dark"></ion-icon>
-        <ion-label>IDR 250 K</ion-label>
-      </ion-chip>
-    </ion-item>
   </ion-card>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuController} from '@ionic/angular';
+import {MenuController, NavController} from '@ionic/angular';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {UserService} from '../service/user.service';
@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(public menuCtrl: MenuController, public user: UserService, public afAuth: AngularFireAuth, public router: Router) { }
+  constructor(public menuCtrl: MenuController, public user: UserService, public afAuth: AngularFireAuth, public router: Router, private navCtrl: NavController) { }
 
   ngOnInit() {
     this.menuCtrl.enable(false);
@@ -39,6 +39,10 @@ export class LoginPage implements OnInit {
         console.log('User not found');
       }
     }
+  }
+
+  goToRegisterPage(){
+    this.navCtrl.navigateForward('/register');
   }
 
 }

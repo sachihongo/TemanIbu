@@ -1,7 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>orderpackage</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref=""></ion-back-button>
+            <ion-title>Order Package</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -27,10 +30,21 @@
           <ion-input placeholder="Enter Address" [(ngModel)]="peopleAddress"></ion-input>
         </ion-item>
       </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime display-format="DDDD MMMM YYYY" min="2016" max="2020-10-31"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-input disabled="true">{{ od }}</ion-input>
+        </ion-item>
+      </ion-col>
 
     <ion-row>
       <ion-col text-center>
-        <ion-button (click)="CreateRecord()" [disabled]="!peopleName || !babyName || !peoplePhone || !peopleAddress ">
+        <ion-button (click)="CreateRecord()" [disabled]="!peopleName || !babyName || !peoplePhone || !peopleAddress " color="darkpink">
           <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
           &nbsp;Pesan
         </ion-button>
