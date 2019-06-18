@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ExploreService} from '../service/explore.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -14,7 +15,7 @@ export class InfoPage implements OnInit {
   newsDescription: string;
 
 
-  constructor(private exploreService: ExploreService) { }
+  constructor(private exploreService: ExploreService, private router: Router) { }
 
   ngOnInit() {
     this.exploreService.read_News().subscribe(data => {
@@ -32,6 +33,10 @@ export class InfoPage implements OnInit {
       console.log(this.news);
 
     });
+  }
+
+  goToInfoDetail() {
+    this.router.navigate(['/infodetail']);
   }
 
 }

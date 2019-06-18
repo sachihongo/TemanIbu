@@ -4,7 +4,7 @@ import {first} from 'rxjs/operators';
 import { auth } from 'firebase/app';
 
 interface user {
-    email: string;
+    username: string; //alias username
     uid: string;
 }
 
@@ -24,9 +24,9 @@ export class UserService {
     //     //     return this.user.username;
     //     // }
 
-    // reAuth(username: string, password: string) {
-    //     return this.afAuth.auth.currentUser.reauthenticateWithCredential(auth.EmailAuthProvider.credential(username + '@codedamn.com', password))
-    // }
+    reAuth(username: string, password: string) {
+        return this.afAuth.auth.currentUser.reauthenticateWithCredential(auth.EmailAuthProvider.credential(username + '', password))
+    }
 
     updatePassword(newpassword: string) {
         return this.afAuth.auth.currentUser.updatePassword(newpassword)
@@ -36,37 +36,37 @@ export class UserService {
         return this.afAuth.auth.currentUser.updateEmail(newemail + '@codedamn.com')
     }
 
-    // async isAuthenticated() {
-    //     if(this.user) return true;
-    //
-    //     const user = await this.afAuth.authState.pipe(first()).toPromise();
-    //
-    //     if(user) {
-    //         this.setUser({
-    //             username: user.email.split('@')[0],
-    //             uid: user.uid
-    //         })
-    //
-    //         return true;
-    //     }
-    //     return false;
-    // }
+    async isAuthenticated() {
+        if (this.user) return true;
 
-    // getUID() {
-    //     if(!this.user) {
-    //         if(this.afAuth.auth.currentUser) {
-    //             const user = this.afAuth.auth.currentUser
-    //             this.setUser({
-    //                 username: user.email.split('@')[0],
-    //                 uid: user.uid
-    //             })
-    //             return user.uid
-    //         } else {
-    //             throw new Error('User not loogged in');
-    //         }
-    //     } else {
-    //         return this.user.uid;
-    //     }
-    // }
+        const user = await this.afAuth.authState.pipe(first()).toPromise();
+
+        if (user) {
+            this.setUser({
+                username: user.email.split('@')[0],
+                uid: user.uid
+            })
+
+            return true;
+        }
+        return false;
+    }
+
+    getUID() {
+        if (!this.user) {
+            if (this.afAuth.auth.currentUser) {
+                const user = this.afAuth.auth.currentUser
+                this.setUser({
+                    username: user.email.split('@')[0],
+                    uid: user.uid
+                })
+                return user.uid
+            } else {
+                throw new Error('User not loogged in');
+            }
+        } else {
+            return this.user.uid;
+        }
+    }
 
 }

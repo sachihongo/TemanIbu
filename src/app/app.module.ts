@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import {UserService} from './service/user.service';
 
 import * as firebase from 'firebase';
+import {AuthService} from './service/auth.service';
 
 firebase.initializeApp(environment.firebase);
 
@@ -39,6 +40,7 @@ firebase.initializeApp(environment.firebase);
     StatusBar,
     SplashScreen,
     UserService,
+      AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

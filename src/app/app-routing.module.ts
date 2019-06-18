@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
   { path: 'soonmom', loadChildren: './soonmom/soonmom.module#SoonmomPageModule' },
   { path: 'soonkids', loadChildren: './soonkids/soonkids.module#SoonkidsPageModule' },
+  { path: 'infodetail', loadChildren: './infodetail/infodetail.module#InfodetailPageModule' },
+  { path: 'promodetail', loadChildren: './promodetail/promodetail.module#PromodetailPageModule' },
   // { path: 'info', loadChildren: './info/info.module#InfoPageModule' },
   // { path: 'promo', loadChildren: './promo/promo.module#PromoPageModule' }
 ];

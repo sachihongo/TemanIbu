@@ -1,7 +1,7 @@
 <script src="promo.page.ts"></script>
 <ion-content>
 
-  <ion-card *ngFor="let item of promo">
+  <ion-card *ngFor="let item of promo" (click)=goToPromoDetail()>
     <ion-img src="{{ item.Imageurl }}"></ion-img>
   </ion-card>
 

@@ -12,7 +12,7 @@ import {UserService} from '../service/user.service';
 })
 export class RegisterPage implements OnInit {
 
-  email: string = '';
+  username: string = '';
   password: string = '';
   cpassword: string = '';
 
@@ -30,23 +30,24 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    const { email, password, cpassword } = this;
+    const { username, password, cpassword } = this;
     if (password !== cpassword) {
       this.showAlert('Error!', 'Password doesnt match');
       return console.error('Password dont match');
     }
 
     try {
-      const res = await this.afAuth.auth.createUserWithEmailAndPassword(email + '', password + '');
+      const res = await this.afAuth.auth.createUserWithEmailAndPassword(username + '', password + '');
       console.log(res.user.uid);
+      username = username.split('@')[0],
 
       this.afstore.doc(`users/${res.user.uid}`).set({
-        email
+        username
       });
 
 
       this.user.setUser({
-        email,
+        username,
         uid: res.user.uid
       });
 

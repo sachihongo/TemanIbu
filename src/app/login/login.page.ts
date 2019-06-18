@@ -11,7 +11,7 @@ import {UserService} from '../service/user.service';
 })
 export class LoginPage implements OnInit {
 
-  email: string = '';
+  username: string = '';
   password: string = '';
 
   constructor(public menuCtrl: MenuController, public user: UserService, public afAuth: AngularFireAuth, public router: Router, private navCtrl: NavController) { }
@@ -21,13 +21,13 @@ export class LoginPage implements OnInit {
   }
 
   async login(form) {
-    const { email, password } = this;
+    const { username, password } = this;
     try {
-      const res = await this.afAuth.auth.signInWithEmailAndPassword(email + '', password + '');
+      const res = await this.afAuth.auth.signInWithEmailAndPassword(username + '', password + '');
 
       if (res.user) {
         this.user.setUser({
-          email,
+          username,
           uid: res.user.uid
         })
         this.router.navigate(['/tabs/home']);
@@ -41,7 +41,7 @@ export class LoginPage implements OnInit {
     }
   }
 
-  goToRegisterPage(){
+  goToRegisterPage() {
     this.navCtrl.navigateForward('/register');
   }
 

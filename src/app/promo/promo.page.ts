@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ExploreService} from '../service/explore.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-promo',
@@ -14,7 +15,7 @@ export class PromoPage implements OnInit {
   promoCode: string;
   promoDiscount: number;
 
-  constructor(private exploreService: ExploreService) { }
+  constructor(private exploreService: ExploreService, private router: Router) { }
 
   ngOnInit() {
     this.exploreService.read_Promo().subscribe(data => {
@@ -33,6 +34,10 @@ export class PromoPage implements OnInit {
       console.log(this.promo);
 
     });
+  }
+
+  goToPromoDetail() {
+    this.router.navigate(['/promodetail']);
   }
 
 }
