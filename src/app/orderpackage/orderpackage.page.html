@@ -23,7 +23,7 @@
       </ion-col>
       <ion-col>
           <ion-item>
-              <ion-input placeholder="Enter Phone Number" [(ngModel)]="peoplePhone"></ion-input>
+              <ion-input type="number" placeholder="Enter Phone Number" [(ngModel)]="peoplePhone"></ion-input>
           </ion-item>
       </ion-col>
       <ion-col>
@@ -39,7 +39,7 @@
       <ion-col>
         <ion-item>
           <ion-label>Date</ion-label>
-          <ion-datetime display-format="DDDD MMMM YYYY" min="2016" max="2020-10-31"></ion-datetime>
+            <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="myDate" (ionChange)="updateMyDate($event)"></ion-datetime>
         </ion-item>
       </ion-col>
       <ion-col>

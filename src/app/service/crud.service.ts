@@ -12,11 +12,11 @@ export class CrudService {
   ) { }
 
   create_NewPeople(record) {
-    return this.firestore.collection('Peoples').add(record);
+    return this.firestore.collection('Posts').add(record);
   }
 
   read_Peoples() {
-    return this.firestore.collection('Peoples').snapshotChanges();
+    return this.firestore.collection('Posts').snapshotChanges();
   }
 
 

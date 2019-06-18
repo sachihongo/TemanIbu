@@ -4,7 +4,7 @@ import {first} from 'rxjs/operators';
 import { auth } from 'firebase/app';
 
 interface user {
-    username: string; //alias username
+    username: string;
     uid: string;
 }
 
@@ -20,9 +20,11 @@ export class UserService {
         this.user = user;
     }
 
-    // getUsername(): String {
-    //     //     return this.user.username;
-    //     // }
+    getUsername(username: string) {
+        username = this.user.username;
+        username = username.split('@')[0];
+        return username;
+    }
 
     reAuth(username: string, password: string) {
         return this.afAuth.auth.currentUser.reauthenticateWithCredential(auth.EmailAuthProvider.credential(username + '', password))

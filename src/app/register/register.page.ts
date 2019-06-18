@@ -15,6 +15,7 @@ export class RegisterPage implements OnInit {
   username: string = '';
   password: string = '';
   cpassword: string = '';
+  usernamesplit: string = '';
 
 
   constructor(public menuCtrl: MenuController,
@@ -31,6 +32,7 @@ export class RegisterPage implements OnInit {
 
   async register() {
     const { username, password, cpassword } = this;
+    this.usernamesplit = username.split('@')[0];
     if (password !== cpassword) {
       this.showAlert('Error!', 'Password doesnt match');
       return console.error('Password dont match');
@@ -39,10 +41,9 @@ export class RegisterPage implements OnInit {
     try {
       const res = await this.afAuth.auth.createUserWithEmailAndPassword(username + '', password + '');
       console.log(res.user.uid);
-      username = username.split('@')[0],
 
       this.afstore.doc(`users/${res.user.uid}`).set({
-        username
+        username: this.usernamesplit
       });
 
 

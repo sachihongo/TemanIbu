@@ -11,7 +11,7 @@
           </div>
           <div padding>
             <ion-item>
-              <ion-input name="email" type="email" placeholder="username/email" [(ngModel)]="username"></ion-input>
+              <ion-input name="email" type="email" placeholder="Email" [(ngModel)]="username"></ion-input>
             </ion-item>
             <ion-item>
               <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
@@ -29,9 +29,9 @@
     <!--Login-->
   <!--</ion-button>-->
 
-  <ion-item lines="none">
-    <ion-label padding (click)="goToResetPassword()" text-left color="medium">Forgot your password?</ion-label>
-  </ion-item>
+  <!--<ion-item lines="none">-->
+    <!--<ion-label padding (click)="goToResetPassword()" text-left color="medium">Forgot your password?</ion-label>-->
+  <!--</ion-item>-->
 
   <ion-button (click)=" goToRegisterPage()" fill="clear" expand="block">Don't have an account? Sign Up</ion-button>
 </ion-content>

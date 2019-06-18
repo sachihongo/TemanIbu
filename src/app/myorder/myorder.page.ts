@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CrudService} from '../service/crud.service';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {UserService} from '../service/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-myorder',
@@ -8,9 +11,20 @@ import {CrudService} from '../service/crud.service';
 })
 export class MyorderPage implements OnInit {
 
-  peoples: any;
+  // peoples: any;
+  mainuser: AngularFirestoreDocument
+  userPosts
+  sub
+  posts
+  username: string
 
-  constructor(private crudService: CrudService) { }
+  constructor(private afs: AngularFirestore, private user: UserService, private router: Router) {
+    this.mainuser = afs.doc(`users/${user.getUID()}`)
+    this.sub = this.mainuser.valueChanges().subscribe(event => {
+      this.posts = event.posts
+      this.username = event.username
+    })
+  }
 
   ngOnInit() {
     // this.crudService.read_Peoples().subscribe(data => {
